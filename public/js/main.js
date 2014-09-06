@@ -1,1 +1,7 @@
-var app = angular.module('wookieApp', ['google-maps']);
+$(document).ready(function() {
+
+	$.getJSON('apidata', function(data){
+		console.log(data);
+	});
+
+});
