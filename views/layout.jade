@@ -10,9 +10,9 @@ html
     title #{title} | Hackathon Starter
     != css('styles')
   body(ng-app='wookieApp')
-    .container
-      include partials/flash
-      block content
+    .container-fluid
+        include partials/flash
+        block content
 
     include partials/footer
 
