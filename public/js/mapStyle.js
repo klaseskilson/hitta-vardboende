@@ -97,7 +97,7 @@ var mapStyle = [{
     "featureType": "landscape.man_made",
     "stylers": [
         {
-            "visibility": "off"
+            "visibility": "on"
         }
     ]
 },
@@ -150,17 +150,14 @@ var mapStyle = [{
     ]
 },
 {
-    "featureType": "poi",
-    "elementType": "geometry",
-    "stylers": [
-        {
-            "visibility": "on"
-        },
-        {
-            "color": "#f0e4d3"
-        }
-    ]
-},
+        "featureType": "poi",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#85B360"
+            }
+        ]
+    },
 {
     "featureType": "road.highway",
     "elementType": "geometry.fill",
@@ -185,6 +182,15 @@ var mapStyle = [{
         }
     ]
 },
+{
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#85B360"
+            }
+        ]
+    },
 {
     "featureType": "poi",
     "elementType": "labels",
