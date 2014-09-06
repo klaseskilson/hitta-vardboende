@@ -7,4 +7,8 @@ app.controller('sidebarCtrl', function($scope, $http, SharedData) {
     SharedData.notifyUpdate();
     $scope.currentCity = SharedData.currentCity;
   }
+
+  $scope.hideInstructions = function() {
+    return false;
+  }
 });
