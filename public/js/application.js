@@ -16,3 +16,4 @@
 //= require main
 //= require mapStyle
 //= require map
+//= require sidebar
