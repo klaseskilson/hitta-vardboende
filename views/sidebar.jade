@@ -5,18 +5,53 @@ div.city
   span.pull-right(title='Ändra stad')
     i.fa.fa-cog.fa-lg
 
+
+
 .questions
-  h4 Kvalitetsområde
+
+  h4 Hitta ditt vårdboende!
   p.instructions(ng-hide='hideInstructions()')
     i.fa.fa-info-circle
     | Markera de områden som är viktiga för dig!
 
-  p Helhetsomdråde
-  p Tillgänglighet
-  p Bemötande
-  p Delaktivhet
-  p Information
-  p Mat och fritid
+  p.pull-right Helhetsområde
+   div.onoffswitch
+    input(type='checkbox', name="helhetsswitch").onoffswitch-checkbox#helhetsswitch 
+    label(for="helhetsswitch").onoffswitch-label
+     span.onoffswitch-inner
+     span.onoffswitch-switch
+  p.pull-right Tillgänglighet
+   div.onoffswitch
+    input(type='checkbox', name="tillganglighetsswitch").onoffswitch-checkbox#tillganglighetsswitch 
+    label(for="tillganglighetsswitch").onoffswitch-label
+     span.onoffswitch-inner
+     span.onoffswitch-switch
+  p.pull-right Bemötande
+   div.onoffswitch
+    input(type='checkbox', name="bemotandeswitch").onoffswitch-checkbox#bemotandeswitch 
+    label(for="bemotandeswitch").onoffswitch-label
+     span.onoffswitch-inner
+     span.onoffswitch-switch
+  p.pull-right Delaktighet
+   div.onoffswitch
+    input(type='checkbox', name="delaktighetswitch").onoffswitch-checkbox#delaktighetswitch 
+    label(for="delaktighetswitch").onoffswitch-label
+     span.onoffswitch-inner
+     span.onoffswitch-switch
+  p.pull-right Information
+   div.onoffswitch
+    input(type='checkbox', name="informationsswitch").onoffswitch-checkbox#informationsswitch 
+    label(for="informationsswitch").onoffswitch-label
+     span.onoffswitch-inner
+     span.onoffswitch-switch
+  p.pull-right Mat och fritid
+   div.onoffswitch
+    input(type='checkbox', name="matswitch").onoffswitch-checkbox#matswitch 
+    label(for="matswitch").onoffswitch-label
+     span.onoffswitch-inner
+     span.onoffswitch-switch
+
+
 
 .result
   h4 Vårdbolag som passar dig

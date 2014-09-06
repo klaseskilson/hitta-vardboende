@@ -8,6 +8,7 @@
 @sidebarWidth: 250px;
 @sidebarPadding: 10px;
 @sidebarTextColor: #707070;
+@footerHeight: 100px;
 
 html, body, #wrapper {
   height: 100%;
@@ -27,12 +28,16 @@ html, body, #wrapper {
 }
 
 .sidebar {
+  position: relative;
   width: @sidebarWidth;
   float: left;
   background-color: @basecolor;
   height: 100%;
   color: @sidebarTextColor;
 
+  .sidebarmain{
+    height: calc(~"100% -" (@footerHeight)~"");
+  }
   div {
     padding: @sidebarPadding;
   }
@@ -41,7 +46,11 @@ html, body, #wrapper {
     font-weight: bold;
     border-bottom: 1px solid #CECECE;
   }
-
+  .footer {
+    height: @footerHeight;
+    position: absolute;
+    bottom: 0;
+  }
   .instructions {
     .bg-success;
     padding: @sidebarPadding/2;
@@ -51,4 +60,62 @@ html, body, #wrapper {
 
 .angular-google-map, .angular-google-map-container {
   height: 100%;
+}
+/*---------*/
+/*KNAPPSTIL*/
+/*---------*/
+.onoffswitch {
+    position: relative; width: 40px; padding: 0px !important; 
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 0px;
+}
+
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 16px; padding: 0; line-height: 16px;
+    font-size: 13px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+    content: "";
+    padding-left: 10px;
+    background-color: #2FCCFF; color: #FFFFFF;
+}
+
+.onoffswitch-inner:after {
+    content: "";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+
+.onoffswitch-switch {
+    display: block; width: 20px; margin: -2px;
+    background: #FFFFFF;
+    border: 2px solid #999999; border-radius: 0px;
+    position: absolute; top: 0; bottom: 0; right: 20px;
+    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
 }
