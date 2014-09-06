@@ -3,6 +3,8 @@ app.controller('sidebarCtrl', function($scope, $http, SharedData) {
   $scope.currentCity = SharedData.currentCity;
 
   $scope.changeCity = function() {
-    $scope.currentCity = $scope.selectedCity;
+    SharedData.setCity($scope.selectedCity);
+    SharedData.notifyUpdate();
+    $scope.currentCity = SharedData.currentCity;
   }
 });
