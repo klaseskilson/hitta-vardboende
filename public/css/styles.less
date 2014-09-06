@@ -4,6 +4,7 @@
 @import "lib/bootstrap-social";
 
 @basecolor: #e85113;
+@sidebarWidth: 250px;
 
 html, body, #wrapper {
   height: 100%;
@@ -15,17 +16,15 @@ html, body, #wrapper {
 }
 
 .map {
-	.make-lg-column(9);
- 	.make-sm-column(8);
-
+  width: calc(~"100% - " (@sidebarWidth) ~"");
+  float: left;
   height: 100%;
   padding: 0;
 }
 
 .sidebar {
-  .make-lg-column(3);
-  .make-sm-column(4);
-
+  width: @sidebarWidth;
+  float: left;
   background-color: @basecolor;
   height: 100%;
 }
