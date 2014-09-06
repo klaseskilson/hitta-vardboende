@@ -21,6 +21,8 @@ var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
 
+var gm = require('googlemaps');
+var util = require('util');
 /**
  * Controllers (route handlers).
  */
@@ -110,6 +112,8 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
+app.use(express.static(__dirname + '/public'));
+app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 
 /**
  * Main routes.

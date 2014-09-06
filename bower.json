@@ -1,0 +1,27 @@
+{
+  "name": "esh14",
+  "version": "0.0.0",
+  "homepage": "https://github.com/klaseskilson/wookie",
+  "authors": [
+    "Klas Eskilson <klas.eskilson@gmail.com>",
+    "Petra Öhlin <>",
+    "Carl Englund <>",
+    "Pontus Orraryd <>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.23",
+    "bootstrap": "~3.2.0",
+    "jquery": "~2.1.1",
+    "angular-google-maps": "~1.2.1",
+    "underscore": "~1.7.0"
+  }
+}
