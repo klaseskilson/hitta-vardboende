@@ -3,10 +3,24 @@
 @import "lib/ionicons/ionicons";
 @import "lib/bootstrap-social";
 
-.angular-google-map-container {
-  height: 400px;
+html, body, #wrapper {
+  height: 100%;
+}
+#wrapper {
+  &>.row, .sidebar, .map, #mapbox {
+    height: 100%;
+  }
 }
 
+.sidebar {
+  .make-lg-column(3);
+  .make-sm-column(4);
+}
 .map {
-  .make-lg-column(8);
+  .make-lg-column(9);
+  .make-sm-column(8);
+}
+
+.angular-google-map, .angular-google-map-container {
+  height: 100%;
 }

@@ -1,5 +1,5 @@
 //- place map stuff here
-section(ng-controller='mapsCtrl')
+div(ng-controller='mapsCtrl', id="mapbox")
   google-map(center="map.center", zoom="map.zoom", options="map.options", draggable="true")
 
   {{ map.zoom }}
