@@ -1,13 +1,18 @@
 @import "../../bower_components/bootstrap/less/bootstrap";
 @import "lib/font-awesome/font-awesome";
 @import "lib/ionicons/ionicons";
+@import "bootstrap-custom";
 @import "lib/bootstrap-social";
 
 @basecolor: #e85113;
+@sidebarWidth: 250px;
+@sidebarPadding: 10px;
 
 html, body, #wrapper {
   height: 100%;
+  text-align: center;
 }
+
 #wrapper {
   &>.row, #mapbox {
     height: 100%;
@@ -15,18 +20,21 @@ html, body, #wrapper {
 }
 
 .map {
-	.make-lg-column(9);
- 	.make-md-column(8);
-
+  width: calc(~"100% - " (@sidebarWidth) ~"");
+  float: left;
   height: 100%;
+  padding: 0;
 }
 
 .sidebar {
-  .make-lg-column(3);
-  .make-md-column(4);
-
+  width: @sidebarWidth;
+  float: left;
   background-color: @basecolor;
   height: 100%;
+
+  div {
+    padding: @sidebarPadding;
+  }
 }
 
 .angular-google-map, .angular-google-map-container {

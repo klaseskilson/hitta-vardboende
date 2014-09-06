@@ -3,8 +3,8 @@ extends layout
 block content
 
   div.row
-    div.sidebar
+    div.sidebar(ng-controller='sidebarCtrl')
       include sidebar
-    div.map
+    div.map(ng-controller='mapsCtrl')
       include map
 

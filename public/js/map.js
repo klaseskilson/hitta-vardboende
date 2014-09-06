@@ -1,13 +1,22 @@
-app.controller('mapsCtrl', function($scope, $http) {
-  var cities = [
-      { name: 'Linköping', location: { latitude: 58.41, longitude: 15.62 }, zoom: 13}
-    ];
+app.controller('mapsCtrl', function($scope, $http, SharedData) {
+  $scope.mapControl = {};
+  $scope.cities = SharedData.cities;
+  $scope.currentCity = SharedData.currentCity;
 
   $scope.map = {
-    center: cities[0].location,
-    zoom: cities[0].zoom,
+    center: $scope.currentCity.location,
+    zoom: $scope.currentCity.zoom,
     options: {
-    	styles: mapStyle
-   }
+      panControl: false,
+      styles: mapStyle,
+      zoomControlOptions: {
+        style: google.maps.ZoomControlStyle.SMALL
+      }
+    }
   };
+
+  $scope.$on('selectedCityChanged', function(event, args) {
+    $scope.currentCity = SharedData.currentCity;
+    $scope.mapControl.refresh($scope.currentCity.location);
+  });
 });
