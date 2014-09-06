@@ -1,3 +1,5 @@
 //- place map stuff here
-div.hej
-  p hej
+section(ng-controller='mapsCtrl')
+  google-map(center="map.center", zoom="map.zoom")
+
+  {{map.zoom}}
