@@ -150,17 +150,14 @@ var mapStyle = [{
     ]
 },
 {
-    "featureType": "poi",
-    "elementType": "geometry",
-    "stylers": [
-        {
-            "visibility": "on"
-        },
-        {
-            "color": "#f0e4d3"
-        }
-    ]
-},
+        "featureType": "poi",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#85B360"
+            }
+        ]
+    },
 {
     "featureType": "road.highway",
     "elementType": "geometry.fill",
@@ -190,7 +187,7 @@ var mapStyle = [{
         "elementType": "geometry",
         "stylers": [
             {
-                "color": "#c5dac6"
+                "color": "#85B360"
             }
         ]
     },
