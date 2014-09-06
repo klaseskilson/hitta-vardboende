@@ -3,22 +3,30 @@
 @import "lib/ionicons/ionicons";
 @import "lib/bootstrap-social";
 
+@basecolor: #e85113;
+
 html, body, #wrapper {
   height: 100%;
 }
 #wrapper {
-  &>.row, .sidebar, .map, #mapbox {
+  &>.row, #mapbox {
     height: 100%;
   }
 }
 
+.map {
+	.make-lg-column(9);
+ 	.make-md-column(8);
+
+  height: 100%;
+}
+
 .sidebar {
   .make-lg-column(3);
-  .make-sm-column(4);
-}
-.map {
-  .make-lg-column(9);
-  .make-sm-column(8);
+  .make-md-column(4);
+
+  background-color: @basecolor;
+  height: 100%;
 }
 
 .angular-google-map, .angular-google-map-container {
