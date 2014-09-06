@@ -97,7 +97,7 @@ var mapStyle = [{
     "featureType": "landscape.man_made",
     "stylers": [
         {
-            "visibility": "off"
+            "visibility": "on"
         }
     ]
 },
@@ -185,6 +185,15 @@ var mapStyle = [{
         }
     ]
 },
+{
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#c5dac6"
+            }
+        ]
+    },
 {
     "featureType": "poi",
     "elementType": "labels",
