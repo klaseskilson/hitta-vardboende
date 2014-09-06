@@ -9,9 +9,7 @@ html
     meta(name='author', content='')
     title #{title} | Hackathon Starter
     != css('styles')
-  body
-    include partials/navbar
-
+  body(ng-app='wookieApp')
     .container
       include partials/flash
       block content

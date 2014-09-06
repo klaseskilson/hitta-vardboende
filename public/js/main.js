@@ -1,5 +1,1 @@
-$(document).ready(function() {
-
-  // Place JavaScript code here...
-
-});
+var app = angular.module('wookieApp', ['google-maps']);
