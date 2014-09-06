@@ -8,6 +8,7 @@
 @sidebarWidth: 250px;
 @sidebarPadding: 10px;
 @sidebarTextColor: #707070;
+@footerHeight: 100px;
 
 html, body, #wrapper {
   height: 100%;
@@ -27,12 +28,16 @@ html, body, #wrapper {
 }
 
 .sidebar {
+  position: relative;
   width: @sidebarWidth;
   float: left;
   background-color: @basecolor;
   height: 100%;
   color: @sidebarTextColor;
 
+  .sidebarmain{
+    height: calc(~"100% -" (@footerHeight)~"");
+  }
   div {
     padding: @sidebarPadding;
   }
@@ -41,12 +46,19 @@ html, body, #wrapper {
     font-weight: bold;
     border-bottom: 1px solid #CECECE;
   }
+  .footer {
+    height: @footerHeight;
+    position: absolute;
+    bottom: 0;
+  }
+  .instructions {
+    .bg-success;
+    padding: @sidebarPadding/2;
+    border: 1px solid lighten(@brand-success, 30%);
+  }
 }
 
 .angular-google-map, .angular-google-map-container {
   height: 100%;
 }
 
-#rubrik{
-	font-family: "Lobster Two";
-}

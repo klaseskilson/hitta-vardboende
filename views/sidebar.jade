@@ -6,8 +6,12 @@ div.city
     i.fa.fa-cog.fa-lg
 
 .questions
-  h1#rubrik Hitta ditt vårdboende!
-  h2 Markera de alternativ som du värdesätter hos ett vårdboende
+
+  h4 Hitta ditt vårdboende!
+  p.instructions(ng-hide='hideInstructions()')
+    i.fa.fa-info-circle
+    | Markera de områden som är viktiga för dig!
+
 
   p Helhetsomdråde
   p Tillgänglighet
@@ -16,12 +20,13 @@ div.city
   p Information
   p Mat och fritid
 
-h2 Vårdbolag som passar dig
+.result
+  h4 Vårdbolag som passar dig
 
-p 1. Linköpings kommun
-p 2. Attendo Care
-p 3. Carema äldreomsorg
-p 4. Bräcke Diakoni
-p 5. KOSMO
-p 6. Aleris äldreomsorg
-p 7. Berzelii vård och omsorg
+  p 1. Linköpings kommun
+  p 2. Attendo Care
+  p 3. Carema äldreomsorg
+  p 4. Bräcke Diakoni
+  p 5. KOSMO
+  p 6. Aleris äldreomsorg
+  p 7. Berzelii vård och omsorg
