@@ -1,22 +1,20 @@
 //- place sidebar stuff here
 div.city
   {{currentCity.name}}
-  select(ng-model='selectedCity', ng-change='changeCity()', ng-options='city as city.name for city in cities')
+  //- select(ng-model='selectedCity', ng-change='changeCity()', ng-options='city as city.name for city in cities')
+  span.pull-right(title='Ändra stad')
+    i.fa.fa-cog.fa-lg
 
-p much info
+.questions
+  h1 KVALITETSOMRÅDE
+  h2 Markera några områden som är viktiga
 
-h1 KVALITETSOMRÅDE
-h2 Markera några områden som är viktiga
-
-p Helhetsomdråde
-p Tillgänglighet
-p Bemötande
-p Delaktivhet
-p Information
-p Mat och fritid
-
-
-
+  p Helhetsomdråde
+  p Tillgänglighet
+  p Bemötande
+  p Delaktivhet
+  p Information
+  p Mat och fritid
 
 h2 Vårdbolag som passar dig
 

@@ -4,13 +4,13 @@
 @import "bootstrap-custom";
 @import "lib/bootstrap-social";
 
-@basecolor: #e85113;
+@basecolor: #F0F0F0;
 @sidebarWidth: 250px;
 @sidebarPadding: 10px;
+@sidebarTextColor: #707070;
 
 html, body, #wrapper {
   height: 100%;
-  text-align: center;
 }
 
 #wrapper {
@@ -31,9 +31,15 @@ html, body, #wrapper {
   float: left;
   background-color: @basecolor;
   height: 100%;
+  color: @sidebarTextColor;
 
   div {
     padding: @sidebarPadding;
+  }
+  .city {
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 1px solid #CECECE;
   }
 }
 
