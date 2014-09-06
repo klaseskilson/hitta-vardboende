@@ -1,13 +1,13 @@
 app.controller('mapsCtrl', function($scope, $http) {
   var cities = [
-      { name: 'Linköping', longitude: 45, latitude: -73 }
+      { name: 'Linköping', location: { latitude: 58.41, longitude: 15.62 }, zoom: 13}
     ];
 
   $scope.map = {
-      center: {
-          latitude: 45,
-          longitude: -73
-      },
-      zoom: 8
+      center: cities[0].location,
+      zoom: cities[0].zoom,
+      options: {
+        style: {}
+      }
   };
 });
