@@ -9,19 +9,16 @@ html
     meta(name='author', content='')
     title #{title} | Hackathon Starter
     != css('styles')
-  body
-    include partials/navbar
-
-    .container
+  body(ng-app='wookieApp')
+    .container-fluid(id='wrapper')
       include partials/flash
       block content
 
-    include partials/footer
-
     script(src='//maps.googleapis.com/maps/api/js?key=AIzaSyAOkdWgREbhyd9SlRt52yl2a1w5ciBI6tY')
     script(src='bower_components/angular/angular.min.js')
+    script(src='bower_components/lodash/dist/lodash.underscore.min.js')
     script(src='bower_components/angular-google-maps/dist/angular-google-maps.min.js')
     script(src='bower_components/jquery/dist/jquery.min.js')
     script(src='bower_components/bootstrap/dist/js/bootstrap.min.js')
-    script(src='bower_components/xml2json/xml2json.js')    
+
     != js('application')

@@ -1,9 +1,9 @@
 {
-  "name": "hackathon-starter",
-  "version": "2.3.3",
+  "name": "wookie",
+  "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sahat/hackathon-starter.git"
+    "url": "https://github.com/klaseskilson/wookie.git"
   },
   "scripts": {
     "start": "node app.js",

@@ -13,8 +13,7 @@
  * scripts down below using //= filename.js notation.
  */
 
-//= require lib/jquery-2.1.1.min
 //= require main
-
-
+//= require mapStyle
+//= require map
 
