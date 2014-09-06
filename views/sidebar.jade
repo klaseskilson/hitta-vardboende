@@ -1,2 +1,8 @@
 //- place sidebar stuff here
+div.city
+  {{currentCity.name}}
+  select(ng-model='selectedCity', ng-change='changeCity()', ng-options='city as city.name for city in cities')
+    //- option(ng-repeat='city in cities')
+    //-   {{city.name}}
+
 p much info

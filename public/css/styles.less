@@ -5,6 +5,7 @@
 
 @basecolor: #e85113;
 @sidebarWidth: 250px;
+@sidebarPadding: 10px;
 
 html, body, #wrapper {
   height: 100%;
@@ -27,6 +28,10 @@ html, body, #wrapper {
   float: left;
   background-color: @basecolor;
   height: 100%;
+
+  div {
+    padding: @sidebarPadding;
+  }
 }
 
 .angular-google-map, .angular-google-map-container {
