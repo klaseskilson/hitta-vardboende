@@ -4,10 +4,10 @@ app.controller('mapsCtrl', function($scope, $http) {
     ];
 
   $scope.map = {
-      center: cities[0].location,
-      zoom: cities[0].zoom,
-      options: {
-        style: {}
-      }
+    center: cities[0].location,
+    zoom: cities[0].zoom,
+    options: {
+    	styles: mapStyle
+   }
   };
 });

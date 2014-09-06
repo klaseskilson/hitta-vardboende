@@ -14,4 +14,5 @@
  */
 
 //= require main
+//= require mapStyle
 //= require map
