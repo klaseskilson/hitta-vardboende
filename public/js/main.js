@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
-  // Place JavaScript code here...
-
+	$.getJSON('apidata', function(data){
+		console.log(data);
+	})
+	
 });
