@@ -1,8 +1,7 @@
-var app = angular.module('wookieApp', ['google-maps']);
+$(document).ready(function() {
 
-app.factory('SharedData', function() {
-  return {
-    selectedCity: null,
-    mapData: null
-  };
-})
+	$.getJSON('apidata', function(data){
+		console.log(data);
+	});
+
+});

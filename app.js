@@ -28,6 +28,7 @@ var util = require('util');
  */
 
 var homeController = require('./controllers/home');
+var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 
 /**
@@ -120,6 +121,7 @@ app.use('/bower_components',  express.static(__dirname + '/bower_components'));
  */
 
 app.get('/', homeController.index);
+app.get('/apidata', apiController.getData);
 app.get('/contact', contactController.getContact);
 app.post('/contact', contactController.postContact);
 
