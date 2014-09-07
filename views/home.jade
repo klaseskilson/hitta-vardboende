@@ -5,10 +5,10 @@ block content
 		h1 Hej!
 		button(ng-click="startCheck()") hallådär
 
-	div.layer(ng-hide="start==false")
-		p tja
+	//- div.layer(ng-hide="start==false")
+	//- 	p tja
 
-	div.row
+	div.row(ng-class="{justloaded: start}")
 		div.sidebar
 			div.sidebarmain
 				include sidebar
