@@ -32,7 +32,7 @@ app.controller('mapsCtrl', function($scope, $http) {
     $scope.currentCity = $scope.selectedCity;
   }
   $scope.hideInstructions = function() {
-    return false;
+    return $scope.activeTopics.length > 0;
   }
   $scope.hasCaregiverSelected = function(){
     return $scope.selectedCaregiver !== '';
@@ -67,7 +67,7 @@ app.controller('mapsCtrl', function($scope, $http) {
       }
     }
   };
-  
+
   $scope.start = true;
  console.log($scope.start);
   $scope.startCheck = function(){
