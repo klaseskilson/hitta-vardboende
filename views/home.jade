@@ -1,10 +1,12 @@
 extends layout
 
 block content
-	div.start(ng-hide="start==false")
-		h1 Hej!
-		button(ng-click="startCheck()") hallådär
-
+	div.start(ng-hide="start==false" ng-click="startCheck()")
+		div.starttext
+			h1(style="font-size: 55pt;") Hitta vårdboende!
+			h3(style="font-size: 30pt;") Jämför vårdbolagen i din kommun
+			//button(ng-click="startCheck()") Sök!
+			div.closebutton
 	//- div.layer(ng-hide="start==false")
 	//- 	p tja
 

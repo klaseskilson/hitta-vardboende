@@ -7,7 +7,7 @@
 @import "barstyle";
 
 @basecolor: #F0F0F0;
-@sidebarWidth: 300px;
+@sidebarWidth: 320px;
 @sidebarPadding: 10px;
 @sidebarTextColor: #707070;
 @footerHeight: 100px;
@@ -25,7 +25,7 @@ html, body, #wrapper {
 }
 
 #wrapper>.row.justloaded {
-  .filter(blur(5px) brightness(0.8));
+  .filter(blur(5px) brightness(0.6));
 }
 
 #wrapper {
@@ -106,4 +106,24 @@ html, body, #wrapper {
   left: 0;
   right: 0;
   z-index: 2;
+  //text-align: center;
+
+}
+
+.starttext{
+
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.6);
+  top: 50%;
+  width: 800px;
+  margin-left: calc(~"50% -" (400px)~"");
+  transform: translateY(-60%);
+  text-align: center;
+  border-radius: 10px;
+  padding: 15px;
+
+  //background-color: @basecolor;
+}
+.h1.starttext{
+  font-size: 55pt;
 }
