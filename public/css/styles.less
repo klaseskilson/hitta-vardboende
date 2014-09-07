@@ -12,6 +12,13 @@
 @sidebarTextColor: #707070;
 @footerHeight: 100px;
 
+// filter mixin
+.filter (@filters) {
+  -webkit-filter: @filters;
+     -mox-filter: @filters;
+          filter: @filters;
+}
+
 html, body, #wrapper {
   height: 100%;
   overflow: hidden;
