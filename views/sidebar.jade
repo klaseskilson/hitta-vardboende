@@ -8,10 +8,10 @@
 
 .questions.content(ng-hide="hasCaregiverSelected()")
 
-  h4 Hitta ditt vårdboende!
+  h4 Hitta rätt vårdbolag!
   p.instructions(ng-hide='hideInstructions()')
     i.fa.fa-info-circle
-    | Markera de områden som är viktiga för dig!
+    | Markera de områden som är viktiga för dig.
 
   //- .clearfix(ng-repeat="topic in topics")
   //-   p.pull-right {{topic.name}}
@@ -54,11 +54,11 @@
      span.onoffswitch5-inner
      span.onoffswitch5-switch
 
-.result.content(ng-hide="hasCaregiverSelected()")
-  h4 Vårdbolag som passar dig
+.result.content
+  h4 Vårdbolag rangordnade efter dina val
 
   ul.list-unstyled
-    li(ng-repeat="caregiver in caregivers | orderBy:calculateScore:true")
+    li(ng-repeat="caregiver in caregivers") 
       a(ng-click="selectCaregiver(caregiver.name)") {{$index+1}}. {{caregiver.name}}
 
 

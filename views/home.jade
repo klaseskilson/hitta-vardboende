@@ -1,13 +1,19 @@
 extends layout
 
 block content
+	div.start(ng-hide="start==false")
+		h1 Hej!
+		button(ng-click="startCheck()") hallådär
 
-  div.row(ng-controller='mapsCtrl')
-    div.sidebar
-      div.sidebarmain
-        include sidebar
-      div.footer
-        include footer
-    div.map
-      include map
+	div.layer(ng-hide="start==false")
+		p tja
+
+	div.row
+		div.sidebar
+			div.sidebarmain
+				include sidebar
+			div.footer
+				include footer
+		div.map
+			include map
 

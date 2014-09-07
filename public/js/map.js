@@ -67,5 +67,14 @@ app.controller('mapsCtrl', function($scope, $http) {
       }
     }
   };
+  
+  $scope.start = true;
+ console.log($scope.start);
+  $scope.startCheck = function(){
+    $scope.start = false;
+    console.log($scope.start);
+  };
+
+
 
 });
