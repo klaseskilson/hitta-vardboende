@@ -1,1 +1,1 @@
-var app = angular.module('wookieApp', ['google-maps', 'ngRoute']);
+var app = angular.module('wookieApp', ['google-maps']);
