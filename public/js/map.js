@@ -40,4 +40,9 @@ app.controller('mapsCtrl', function($scope, $http) {
     console.log("Hej");
     $scope.selectedCaregiver = caregiver;
   }
+  
+  $scope.switchChange = function() {
+    console.log($scope.switches);
+  };
+
 });
