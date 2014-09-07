@@ -56,25 +56,30 @@
   p 6. Aleris äldreomsorg
   p 7. Berzelii vård och omsorg
 
-.info
+.info.content
   h4 Linköpings kommun
 
-  p Tillgänglighet
-  .progress
-    .progress-bar(role='progressbar', aria_valuenow="60", aria_valuemin="0", aria_valuemax="100" style='width: 60%')
+  
+  p.pull-right Tillgänglighet
+    .progress
+      .progress-bar(role='progressbar', id="tillganglighetbar" style='width: {{60}}%')
 
-  p Bemötande
-  .progress
-    .progress-bar(role='progressbar', aria_valuenow="60", aria_valuemin="0", aria_valuemax="100" style='width: 60%')
+  p.pull-right  Bemötande
+    .progress
+      .progress-bar(role='progressbar', id="bemotandebar" style='width: {{60}}%')
 
-  p Delaktighet
-  .progress
-    .progress-bar(role='progressbar', aria_valuenow="60", aria_valuemin="0", aria_valuemax="100" style='width: 60%')
+  p.pull-right Delaktighet
+    .progress
+      .progress-bar(role='progressbar', id="delaktighetbar" style='width:{{20+60}}%')
 
-  p Information
-  .progress
-    .progress-bar(role='progressbar', aria_valuenow="60", aria_valuemin="0", aria_valuemax="100" style='width: 60%')
+  p.pull-right  Information
+    .progress
+      .progress-bar(role='progressbar', id="infomationbar" style='width: {{60}}%')
 
-  p Mat och fritid
-  .progress
-    .progress-bar(role='progressbar', aria_valuenow="60", aria_valuemin="0", aria_valuemax="100" style='width: 60%')
+  p.pull-right Mat och fritid
+    .progress
+      .progress-bar(role='progressbar', id="matochfritidbar" style='width: {{60}}%')
+
+  p Antal boenden: {{7}}
+  p Nuvarande väntetid: {{46}} dagar
+  a(href='{{google.com}}') Webbplats
