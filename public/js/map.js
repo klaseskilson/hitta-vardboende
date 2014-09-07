@@ -35,12 +35,7 @@ app.controller('mapsCtrl', function($scope, $http) {
     return false;
   }
   $scope.hasCaregiverSelected = function(){
-    if($scope.selectedCaregiver == '')
-    {
-      return false;
-    }else{
-      return true;
-    }
+    return $scope.selectedCaregiver !== '';
   }
   $scope.caregiverIsSelected = function(house) {
     if($scope.selectedCaregiver && house.caregiver === $scope.selectedCaregiver) {
@@ -48,15 +43,30 @@ app.controller('mapsCtrl', function($scope, $http) {
     }
   }
   $scope.selectCaregiver = function(caregiver) {
-    console.log(caregiver);
-    console.log("Hej");
     $scope.selectedCaregiver = caregiver;
   }
 
-  $scope.calculateScore = function() {
-    console.log($scope.switches);
+  $scope.calculateScore = function(caregiver) {
+    // console.log(caregiver);
+    // console.log($scope.activeTopics);
+    // console.log($scope.topics);
 
-    console.log('hej');
+    var sum = 0;
+
+    _($scope.activeTopics).each(function(topic, index) {
+      // console.log(topic);
+      var theTopic = _.findWhere(topics, {id: topic});
+      var topicIndex = _.indexOf(topics, theTopic);
+      // console.log(theTopic);
+      // console.log(topicIndex);
+      var value = parseFloat(caregiver.answers[topicIndex]);
+      console.log("adding " + value);
+      sum += value;
+    });
+
+    console.log(caregiver.name + ": " + sum);
+
+    return sum;
   }
 
   $scope.switchChange = function() {
@@ -66,6 +76,7 @@ app.controller('mapsCtrl', function($scope, $http) {
         $scope.activeTopics.push(k);
       }
     }
+    console.log("\t\t\t\t=== CHANGING ===");
   };
 
 });
