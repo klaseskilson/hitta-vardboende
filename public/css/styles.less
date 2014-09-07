@@ -12,6 +12,7 @@
 
 html, body, #wrapper {
   height: 100%;
+  overflow: hidden;
 }
 
 #wrapper {
@@ -35,8 +36,10 @@ html, body, #wrapper {
   height: 100%;
   color: @sidebarTextColor;
 
+
   .sidebarmain{
     height: calc(~"100% -" (@footerHeight)~"");
+    overflow-y: scroll;
   }
   div {
     padding: @sidebarPadding;
