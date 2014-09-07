@@ -22,6 +22,8 @@ app.controller('mapsCtrl', function($scope, $http) {
   };
 
   $scope.caregivers = caregivers;
+  $scope.topics = topics;
+  $scope.activeTopics = [];
 
   $scope.showHouse = function(house) {
     house.show = !house.show || true;
@@ -49,9 +51,20 @@ app.controller('mapsCtrl', function($scope, $http) {
     $
     $scope.selectedCaregiver = caregiver;
   }
-  
-  $scope.switchChange = function() {
+
+  $scope.calculateScore = function() {
     console.log($scope.switches);
+
+    console.log('hej');
+  }
+
+  $scope.switchChange = function() {
+    $scope.activeTopics = [];
+    for(var k in $scope.switches) {
+      if($scope.switches[k]) {
+        $scope.activeTopics.push(k);
+      }
+    }
   };
 
 });
