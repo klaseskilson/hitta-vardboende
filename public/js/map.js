@@ -1,4 +1,5 @@
 app.controller('mapsCtrl', function($scope, $http) {
+  // map stuff!
   $scope.cities = [
       { name: 'Linköping', location: { latitude: 58.41, longitude: 15.62 }, zoom: 13}
     ];
@@ -18,6 +19,8 @@ app.controller('mapsCtrl', function($scope, $http) {
     }
   };
 
+  $scope.caregivers = caregivers;
+
   $scope.showHouse = function(house) {
     house.show = !house.show || true;
   }
@@ -32,7 +35,9 @@ app.controller('mapsCtrl', function($scope, $http) {
       console.log($scope.selectedCaregiver);
     }
   }
-  $scope.selectedCaregiver = function(caregiver) {
+  $scope.selectCaregiver = function(caregiver) {
+    console.log(caregiver);
+    console.log("Hej");
     $scope.selectedCaregiver = caregiver;
   }
   

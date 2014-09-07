@@ -6,7 +6,6 @@
     i.fa.fa-cog.fa-lg
 
 
-
 .questions.content
 
   h4 Hitta ditt vårdboende!
@@ -16,13 +15,13 @@
 
   p.pull-right Tillgänglighet
    div.onoffswitch1
-    input(type='checkbox', id="tillganglighetsswitch" ng-model="switches.0" ng-change="switchChange()").onoffswitch1-checkbox 
+    input(type='checkbox', id="tillganglighetsswitch" ng-model="switches.0" ng-change="switchChange()").onoffswitch1-checkbox
     label(for="tillganglighetsswitch").onoffswitch1-label
      span.onoffswitch1-inner
      span.onoffswitch1-switch
   p.pull-right Bemötande
    div.onoffswitch2
-    input(type='checkbox', id="bemotandeswitch" ng-model="switches.1" ng-change="switchChange()").onoffswitch2-checkbox 
+    input(type='checkbox', id="bemotandeswitch" ng-model="switches.1" ng-change="switchChange()").onoffswitch2-checkbox
     label(for="bemotandeswitch").onoffswitch2-label
      span.onoffswitch2-inner
      span.onoffswitch2-switch
@@ -40,7 +39,7 @@
      span.onoffswitch4-switch
   p.pull-right Mat och fritid
    div.onoffswitch5
-    input(type='checkbox', id="matswitch" ng-model="switches.4" ng-change="switchChange()").onoffswitch5-checkbox 
+    input(type='checkbox', id="matswitch" ng-model="switches.4" ng-change="switchChange()").onoffswitch5-checkbox
     label(for="matswitch").onoffswitch5-label
      span.onoffswitch5-inner
      span.onoffswitch5-switch
@@ -48,18 +47,13 @@
 .result.content
   h4 Vårdbolag som passar dig
 
-  p 1. Linköpings kommun
-  p 2. Attendo Care
-  p 3. Carema äldreomsorg
-  p 4. Bräcke Diakoni
-  p 5. KOSMO
-  p 6. Aleris äldreomsorg
-  p 7. Berzelii vård och omsorg
+  ul.list-unstyled
+    li(ng-repeat="caregiver in caregivers") {{$index+1}}. {{caregiver.name}}
 
 .info.content
   h4 Linköpings kommun
 
-  
+
   p.pull-right Tillgänglighet
     .progress
       .progress-bar(role='progressbar', id="tillganglighetbar" style='width: {{60}}%')
