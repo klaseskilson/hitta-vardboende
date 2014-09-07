@@ -20,7 +20,7 @@
 
     //- div.clearfix
 
-    ul.list-unstyled
+    ul.list-unstyled.topic-list
       li.select-topics
         input(type='checkbox', id="switches-access", ng-model="switches.access", ng-change="switchChange()")
         label(for="switches-access") Tillgänglighet
@@ -68,19 +68,25 @@
     //-    span.onoffswitch5-inner
     //-    span.onoffswitch5-switch
 
-  .result(ng-show="hideInstructions()")
-    h4 Vårdbolag rangordnade efter dina val
 
-    p Klicka på ett vårbolag för att veta mer.
+div(ng-hide="hasCaregiverSelected()")
+  .result.content(ng-show="hideInstructions()")
+      h4 Vårdbolag
+      p Nedan rangordnas vårbolag efter det du tycker är viktigt.
 
-    ul.list-unstyled.result-list
-      li(ng-repeat="caregiver in caregivers | orderBy:calculateScore:true", class="result-list-{{$index}}")
-        a(href="#" ng-click="selectCaregiver(caregiver.name)") {{$index+1}}. {{caregiver.name}}
+      p Klicka på ett vårbolag för att veta mer.
+
+      ul.list-unstyled.result-list
+        li(ng-repeat="caregiver in caregivers | orderBy:calculateScore:true", class="result-list-{{$index}}")
+          a(href="#" ng-click="selectCaregiver(caregiver.name)") {{$index+1}}. {{caregiver.name}}
 
 
 .info.content(ng-show="hasCaregiverSelected()")
-  i.fa.fa-arrow-left(ng-click="selectCaregiver('')")
-    h4 {{selectedCaregiver}}
+  a.backfromcaregiver(href="#", ng-click="selectCaregiver('')")
+    i.fa.fa-arrow-left.fa-sm
+    | Gå tillbaka
+
+  h4 {{selectedCaregiver}}
   p
   p.pull-right Tillgänglighet
     .progress
@@ -102,5 +108,6 @@
     .progress
       .progress-bar(role='progressbar', id="matochfritidbar" style='width: {{60}}%')
 
-  p Vårdboladet har 7 boenden, och har fär närvarande 46 dagar i väntetid. För mer information, sök bolagets
-    a(href='{{google.com}}') webbplats
+  p Vårdboladet har 7 boenden, och har för närvarande 46 dagar i väntetid. För mer information, besök bolagets
+    a(href='{{google.com}}')  webbplats
+    |.
