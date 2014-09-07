@@ -1,9 +1,15 @@
 //- place map stuff here
 google-map(center="map.center", zoom="map.zoom", options="map.options", control="mapControl", draggable="true")
   marker(ng-repeat="house in mapPoints", idKey="house.id", coords="house.coordinates", click="showHouse(house)")
-    window(show="house.show")
+    window(show="house.show", ng-class="{active: caregiverIsSelected(house)}")
       div
-        | {{house.name}}, {{house.address}}
+        p
+          strong {{house.name}}
+          |, {{house.caregiver}}
+        p
+          |{{house.address}}
+        p
+          a(href="#", ng-click="selectCaregiver(house.caregiver)") Mer info om {{house.caregiver}}
 
 {{ map.zoom }}
 {{ map.center.longitude }}
