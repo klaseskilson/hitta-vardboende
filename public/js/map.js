@@ -1,7 +1,7 @@
 app.controller('mapsCtrl', function($scope, $http) {
   // map stuff!
   $scope.cities = [
-      { name: 'Linköping', location: { latitude: 58.41, longitude: 15.62 }, zoom: 13}
+      { name: 'Linköping', location: { latitude: 58.41, longitude: 15.62 }, zoom: 12}
     ];
   $scope.mapControl = {};
   $scope.mapPoints = houses;
