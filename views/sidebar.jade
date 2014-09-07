@@ -77,7 +77,8 @@
       li(ng-repeat="caregiver in caregivers | orderBy:calculateScore:true", class="result-list-{{$index}}")
         a(href="#" ng-click="selectCaregiver(caregiver.name)") {{$index+1}}. {{caregiver.name}}
 
-.info.content(ng-show="hasCaregiverSelected()" ng-animate="'fade'")
+
+.info.content(ng-show="hasCaregiverSelected()")
   i.fa.fa-arrow-left(ng-click="selectCaregiver('')")
     h4 {{selectedCaregiver}}
   p
@@ -101,6 +102,5 @@
     .progress
       .progress-bar(role='progressbar', id="matochfritidbar" style='width: {{60}}%')
 
-  p Antal boenden: {{7}}
-  p Nuvarande väntetid: {{46}} dagar
-  a(href='{{google.com}}') Webbplats
+  p Vårdboladet har 7 boenden, och har fär närvarande 46 dagar i väntetid. För mer information, sök bolagets
+    a(href='{{google.com}}') webbplats

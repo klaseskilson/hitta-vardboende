@@ -11,6 +11,7 @@
 @sidebarPadding: 10px;
 @sidebarTextColor: #707070;
 @footerHeight: 100px;
+@link-color:  #e85113;
 
 // filter mixin
 .filter (@filters) {
@@ -68,6 +69,7 @@ html, body, #wrapper {
     height: @footerHeight;
     position: absolute;
     bottom: 0;
+    padding-left: 10px;
   }
   .instructions {
     .bg-success;
@@ -114,10 +116,9 @@ html, body, #wrapper {
 
   position: relative;
   background-color: rgba(255, 255, 255, 0.6);
-  top: 50%;
-  width: 800px;
-  margin-left: calc(~"50% -" (400px)~"");
-  transform: translateY(-60%);
+  top: 30%;
+  width: 500px;
+  margin-left: calc(~"50% -" (250px)~"");
   text-align: center;
   border-radius: 10px;
   padding: 15px;
@@ -138,4 +139,16 @@ html, body, #wrapper {
   .result-list-2 {
     font-size: @font-size-base + 1px;
   }
+}
+
+.logo{
+  font-size: 55px;
+  font-style: italic;
+  font-family: "Lobster Two";
+  color: @link-color;
+}
+
+i:hover{
+  color: @link-color;
+
 }
