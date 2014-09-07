@@ -7,6 +7,8 @@ app.controller('mapsCtrl', function($scope, $http) {
   $scope.mapPoints = houses;
   $scope.currentCity = $scope.cities[0];
 
+  $scope.selectedCaregiver = '';
+
   $scope.map = {
     center: $scope.currentCity.location,
     zoom: $scope.currentCity.zoom,
@@ -29,6 +31,14 @@ app.controller('mapsCtrl', function($scope, $http) {
   }
   $scope.hideInstructions = function() {
     return false;
+  }
+  $scope.hasCaregiverSelected = function(){
+    if($scope.selectedCaregiver == '')
+    {
+      return false;
+    }else{
+      return true;
+    }
   }
   $scope.caregiverIsSelected = function(house) {
     if($scope.selectedCaregiver && house.caregiver === $scope.selectedCaregiver) {

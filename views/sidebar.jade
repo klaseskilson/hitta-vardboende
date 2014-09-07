@@ -48,12 +48,14 @@
   h4 Vårdbolag som passar dig
 
   ul.list-unstyled
-    li(ng-repeat="caregiver in caregivers") {{$index+1}}. {{caregiver.name}}
-
-.info.content
-  h4 Linköpings kommun
+    li(ng-repeat="caregiver in caregivers") 
+      a(ng-click="selectCaregiver(caregiver.name)")) {{$index+1}}. {{caregiver.name}}
 
 
+.info.content(ng-show="hasCaregiverSelected()")
+  i.fa.fa-arrow-left(ng-click="selectCaregiver('')")
+    h4 Linköpings kommun
+  p
   p.pull-right Tillgänglighet
     .progress
       .progress-bar(role='progressbar', id="tillganglighetbar" style='width: {{60}}%')
