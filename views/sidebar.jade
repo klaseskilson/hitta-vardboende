@@ -1,5 +1,5 @@
 //- place sidebar stuff here
-div.city
+.city.content
   {{currentCity.name}}
   //- select(ng-model='selectedCity', ng-change='changeCity()', ng-options='city as city.name for city in cities')
   span.pull-right(title='Ändra stad')
@@ -7,7 +7,7 @@ div.city
 
 
 
-.questions
+.questions.content
 
   h4 Hitta ditt vårdboende!
   p.instructions(ng-hide='hideInstructions()')
@@ -45,9 +45,7 @@ div.city
      span.onoffswitch5-inner
      span.onoffswitch5-switch
 
-
-
-.result
+.result.content
   h4 Vårdbolag som passar dig
 
   p 1. Linköpings kommun
@@ -57,3 +55,4 @@ div.city
   p 5. KOSMO
   p 6. Aleris äldreomsorg
   p 7. Berzelii vård och omsorg
+

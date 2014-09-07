@@ -1,7 +1,10 @@
-app.controller('mapsCtrl', function($scope, $http, SharedData) {
+app.controller('mapsCtrl', function($scope, $http) {
+  $scope.cities = [
+      { name: 'Linköping', location: { latitude: 58.41, longitude: 15.62 }, zoom: 13}
+    ];
   $scope.mapControl = {};
-  $scope.cities = SharedData.cities;
-  $scope.currentCity = SharedData.currentCity;
+  $scope.mapPoints = houses;
+  $scope.currentCity = $scope.cities[0];
 
   $scope.map = {
     center: $scope.currentCity.location,
@@ -15,8 +18,23 @@ app.controller('mapsCtrl', function($scope, $http, SharedData) {
     }
   };
 
-  $scope.$on('selectedCityChanged', function(event, args) {
-    $scope.currentCity = SharedData.currentCity;
-    $scope.mapControl.refresh($scope.currentCity.location);
-  });
+  $scope.showHouse = function(house) {
+    house.show = !house.show || true;
+    console.log(house);
+  }
+  $scope.changeCity = function() {
+    $scope.currentCity = $scope.selectedCity;
+  }
+  $scope.hideInstructions = function() {
+    return false;
+  }
+  $scope.caregiverIsSelected = function(house) {
+    console.log(house);
+    if($scope.selectedCaregiver && house.caregiver === $scope.selectedCaregiver) {
+      console.log($scope.selectedCaregiver);
+    }
+  }
+  $scope.selectedCaregiver = function(caregiver) {
+    $scope.selectedCaregiver = caregiver;
+  }
 });

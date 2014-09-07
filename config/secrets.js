@@ -18,8 +18,6 @@
 
 module.exports = {
 
-  db: process.env.MONGODB|| 'mongodb://ponor:hej@kahana.mongohq.com:10008/ponor',
-
   sessionSecret: process.env.SESSION_SECRET || 'Your Session Secret goes here',
 
   mailgun: {

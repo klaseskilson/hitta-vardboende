@@ -2,12 +2,12 @@ extends layout
 
 block content
 
-  div.row
-    div.sidebar(ng-controller='sidebarCtrl')
+  div.row(ng-controller='mapsCtrl')
+    div.sidebar
       div.sidebarmain
         include sidebar
       div.footer
         include footer
-    div.map(ng-controller='mapsCtrl')
+    div.map
       include map
 
