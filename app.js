@@ -13,10 +13,8 @@ var csrf = require('lusca').csrf();
 var methodOverride = require('method-override');
 
 var _ = require('lodash');
-var MongoStore = require('connect-mongo')({ session: session });
 var flash = require('express-flash');
 var path = require('path');
-var mongoose = require('mongoose');
 var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
