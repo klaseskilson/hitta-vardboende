@@ -6,7 +6,6 @@
     i.fa.fa-cog.fa-lg
 
 
-
 .questions.content
 
   h4 Hitta ditt vårdboende!
@@ -16,31 +15,31 @@
 
   p.pull-right Tillgänglighet
    div.onoffswitch1
-    input(type='checkbox', name="tillganglighetsswitch").onoffswitch1-checkbox#tillganglighetsswitch 
+    input(type='checkbox', name="tillganglighetsswitch").onoffswitch1-checkbox#tillganglighetsswitch
     label(for="tillganglighetsswitch").onoffswitch1-label
      span.onoffswitch1-inner
      span.onoffswitch1-switch
   p.pull-right Bemötande
    div.onoffswitch2
-    input(type='checkbox', name="bemotandeswitch").onoffswitch2-checkbox#bemotandeswitch 
+    input(type='checkbox', name="bemotandeswitch").onoffswitch2-checkbox#bemotandeswitch
     label(for="bemotandeswitch").onoffswitch2-label
      span.onoffswitch2-inner
      span.onoffswitch2-switch
   p.pull-right Delaktighet
    div.onoffswitch3
-    input(type='checkbox', name="delaktighetswitch").onoffswitch3-checkbox#delaktighetswitch 
+    input(type='checkbox', name="delaktighetswitch").onoffswitch3-checkbox#delaktighetswitch
     label(for="delaktighetswitch").onoffswitch3-label
      span.onoffswitch3-inner
      span.onoffswitch3-switch
   p.pull-right Information
    div.onoffswitch4
-    input(type='checkbox', name="informationsswitch").onoffswitch4-checkbox#informationsswitch 
+    input(type='checkbox', name="informationsswitch").onoffswitch4-checkbox#informationsswitch
     label(for="informationsswitch").onoffswitch4-label
      span.onoffswitch4-inner
      span.onoffswitch4-switch
   p.pull-right Mat och fritid
    div.onoffswitch5
-    input(type='checkbox', name="matswitch").onoffswitch5-checkbox#matswitch 
+    input(type='checkbox', name="matswitch").onoffswitch5-checkbox#matswitch
     label(for="matswitch").onoffswitch5-label
      span.onoffswitch5-inner
      span.onoffswitch5-switch
@@ -48,18 +47,13 @@
 .result.content
   h4 Vårdbolag som passar dig
 
-  p 1. Linköpings kommun
-  p 2. Attendo Care
-  p 3. Carema äldreomsorg
-  p 4. Bräcke Diakoni
-  p 5. KOSMO
-  p 6. Aleris äldreomsorg
-  p 7. Berzelii vård och omsorg
+  ul.list-unstyled
+    li(ng-repeat="caregiver in caregivers") {{$index+1}}. {{caregiver.name}}
 
 .info.content
   h4 Linköpings kommun
 
-  
+
   p.pull-right Tillgänglighet
     .progress
       .progress-bar(role='progressbar', id="tillganglighetbar" style='width: {{60}}%')

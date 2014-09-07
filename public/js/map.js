@@ -19,6 +19,8 @@ app.controller('mapsCtrl', function($scope, $http) {
     }
   };
 
+  $scope.caregivers = caregivers;
+
   $scope.showHouse = function(house) {
     house.show = !house.show || true;
   }

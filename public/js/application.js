@@ -15,6 +15,7 @@
 
 //= require main
 //= require wookieapp
+//= require caregivers
 //= require houses
 //= require mapStyle
 //= require map
