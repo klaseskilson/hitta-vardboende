@@ -13,9 +13,9 @@
  * scripts down below using //= filename.js notation.
  */
 
-//= require main
 //= require wookieapp
 //= require caredata
+//= require main
 //= require houses
 //= require mapStyle
 //= require map

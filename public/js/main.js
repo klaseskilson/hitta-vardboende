@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
 	$.getJSON('apidata', function(data){
-		
-		console.log(data);
-
-		
+    caregivers = _(caregivers).map(function(caregiver, caregiverindex) {
+      caregiver.answers = data[caregiverindex];
+      return caregiver;
+    });
 	});
 });

@@ -13,33 +13,43 @@
     i.fa.fa-info-circle
     | Markera de områden som är viktiga för dig!
 
+  //- .clearfix(ng-repeat="topic in topics")
+  //-   p.pull-right {{topic.name}}
+  //-   div.onoffswitch(id="{{topic.id}}")
+  //-     input(type='checkbox', id="input-{{topic.id}}" ng-model="switches.wat" ng-change="switchChange()").onoffswitch-checkbox
+  //-     label(for="input-{{topic.id}}").onoffswitch-label
+  //-       span.onoffswitch-inner
+  //-       span.onoffswitch-switch
+
+  //- div.clearfix
+
   p.pull-right Tillgänglighet
    div.onoffswitch1
-    input(type='checkbox', id="tillganglighetsswitch" ng-model="switches.0" ng-change="switchChange()").onoffswitch1-checkbox
+    input(type='checkbox', id="tillganglighetsswitch" ng-model="switches.access" ng-change="switchChange()").onoffswitch1-checkbox
     label(for="tillganglighetsswitch").onoffswitch1-label
      span.onoffswitch1-inner
      span.onoffswitch1-switch
   p.pull-right Bemötande
    div.onoffswitch2
-    input(type='checkbox', id="bemotandeswitch" ng-model="switches.1" ng-change="switchChange()").onoffswitch2-checkbox
+    input(type='checkbox', id="bemotandeswitch" ng-model="switches.treatment" ng-change="switchChange()").onoffswitch2-checkbox
     label(for="bemotandeswitch").onoffswitch2-label
      span.onoffswitch2-inner
      span.onoffswitch2-switch
   p.pull-right Delaktighet
    div.onoffswitch3
-    input(type='checkbox', id="delaktighetswitch" ng-model="switches.2" ng-change="switchChange()").onoffswitch3-checkbox
+    input(type='checkbox', id="delaktighetswitch" ng-model="switches.participation" ng-change="switchChange()").onoffswitch3-checkbox
     label(for="delaktighetswitch").onoffswitch3-label
      span.onoffswitch3-inner
      span.onoffswitch3-switch
   p.pull-right Information
    div.onoffswitch4
-    input(type='checkbox', id="informationsswitch" ng-model="switches.3" ng-change="switchChange()").onoffswitch4-checkbox
+    input(type='checkbox', id="informationsswitch" ng-model="switches.information" ng-change="switchChange()").onoffswitch4-checkbox
     label(for="informationsswitch").onoffswitch4-label
      span.onoffswitch4-inner
      span.onoffswitch4-switch
   p.pull-right Mat och fritid
    div.onoffswitch5
-    input(type='checkbox', id="matswitch" ng-model="switches.4" ng-change="switchChange()").onoffswitch5-checkbox
+    input(type='checkbox', id="matswitch" ng-model="switches.food" ng-change="switchChange()").onoffswitch5-checkbox
     label(for="matswitch").onoffswitch5-label
      span.onoffswitch5-inner
      span.onoffswitch5-switch
@@ -48,7 +58,7 @@
   h4 Vårdbolag som passar dig
 
   ul.list-unstyled
-    li(ng-repeat="caregiver in caregivers") {{$index+1}}. {{caregiver}}
+    li(ng-repeat="caregiver in caregivers | orderBy:calculateScore()") {{$index+1}}. {{caregiver.name}}
 
 .info.content
   h4 Linköpings kommun
