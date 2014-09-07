@@ -53,6 +53,8 @@ app.controller('mapsCtrl', function($scope, $http) {
       $scope.selectedCaregiverData.information = theCaregiver.answers[4];
       $scope.selectedCaregiverData.food = theCaregiver.answers[5];
 
+      $scope.selectedCaregiverData.count = _($scope.mapPoints).findWhere({'caregiver': caregiver});
+
       console.log($scope.selectedCaregiverData);
     } else {
       $scope.selectedCaregiverData = {};

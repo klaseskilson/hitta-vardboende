@@ -90,24 +90,24 @@ div(ng-hide="hasCaregiverSelected()")
 
   p.pull-right Tillgänglighet
     .progress
-      .progress-bar(role='progressbar', id="tillganglighetbar" style='width: {{selectedCaregiverData.access}}%')
+      .progress-bar(role='progressbar', id="tillganglighetbar" style='width: {{selectedCaregiverData.access}}%', title="{{selectedCaregiverData.access}}% var nöjda med detta")
 
   p.pull-right Bemötande
     .progress
-      .progress-bar(role='progressbar', id="bemotandebar" style='width: {{selectedCaregiverData.treatment}}%')
+      .progress-bar(role='progressbar', id="bemotandebar" style='width: {{selectedCaregiverData.treatment}}%', title="{{selectedCaregiverData.treatment}}% var nöjda med detta")
 
   p.pull-right Delaktighet
     .progress
-      .progress-bar(role='progressbar', id="delaktighetbar" style='width:{{selectedCaregiverData.participation}}%')
+      .progress-bar(role='progressbar', id="delaktighetbar" style='width:{{selectedCaregiverData.participation}}%', title="{{selectedCaregiverData.participation}}% var nöjda med detta")
 
   p.pull-right Information
     .progress
-      .progress-bar(role='progressbar', id="infomationbar" style='width: {{selectedCaregiverData.information}}%')
+      .progress-bar(role='progressbar', id="infomationbar" style='width: {{selectedCaregiverData.information}}%', title="{{selectedCaregiverData.information}}% var nöjda med detta")
 
   p.pull-right Mat och fritid
     .progress
-      .progress-bar(role='progressbar', id="matochfritidbar" style='width: {{selectedCaregiverData.food}}%')
+      .progress-bar(role='progressbar', id="matochfritidbar" style='width: {{selectedCaregiverData.food}}%', title="{{selectedCaregiverData.food}}% var nöjda med detta")
 
-  p Vårdboladet har 7 boenden, och har för närvarande 46 dagar i väntetid. För mer information, besök bolagets
+  p Vårdboladet har {{selectedCaregiverData.count}} boenden, och har för närvarande 46 dagar i väntetid. För mer information, besök bolagets
     a(href='{{google.com}}')  webbplats
     |.
