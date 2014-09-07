@@ -2,6 +2,7 @@ exports.getData = function(req, res) {
 
 	var Client = require('node-rest-client').Client;
 	var _ = require('underscore');
+
 	client = new Client();
 	
 	// direct way
@@ -14,7 +15,7 @@ exports.getData = function(req, res) {
 		var returnResult = new Array();
 		
 		//Loop trough to get the correct dataset
-		for(i = 2; i < 8; i++)
+		for(i = 2; i < 9; i++)
 			 returnResult[i-2] = cleanResult[i].split(" ");  
 		
 		//Cleanup and remove unnecessary values

@@ -20,7 +20,6 @@ app.controller('mapsCtrl', function($scope, $http) {
 
   $scope.showHouse = function(house) {
     house.show = !house.show || true;
-    console.log(house);
   }
   $scope.changeCity = function() {
     $scope.currentCity = $scope.selectedCity;
@@ -29,7 +28,6 @@ app.controller('mapsCtrl', function($scope, $http) {
     return false;
   }
   $scope.caregiverIsSelected = function(house) {
-    console.log(house);
     if($scope.selectedCaregiver && house.caregiver === $scope.selectedCaregiver) {
       console.log($scope.selectedCaregiver);
     }
@@ -37,4 +35,9 @@ app.controller('mapsCtrl', function($scope, $http) {
   $scope.selectedCaregiver = function(caregiver) {
     $scope.selectedCaregiver = caregiver;
   }
+  
+  $scope.switchChange = function() {
+    console.log($scope.switches);
+  };
+
 });

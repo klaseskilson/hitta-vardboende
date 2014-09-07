@@ -16,31 +16,31 @@
 
   p.pull-right Tillgänglighet
    div.onoffswitch1
-    input(type='checkbox', name="tillganglighetsswitch").onoffswitch1-checkbox#tillganglighetsswitch 
+    input(type='checkbox', id="tillganglighetsswitch" ng-model="switches.0" ng-change="switchChange()").onoffswitch1-checkbox 
     label(for="tillganglighetsswitch").onoffswitch1-label
      span.onoffswitch1-inner
      span.onoffswitch1-switch
   p.pull-right Bemötande
    div.onoffswitch2
-    input(type='checkbox', name="bemotandeswitch").onoffswitch2-checkbox#bemotandeswitch 
+    input(type='checkbox', id="bemotandeswitch" ng-model="switches.1" ng-change="switchChange()").onoffswitch2-checkbox 
     label(for="bemotandeswitch").onoffswitch2-label
      span.onoffswitch2-inner
      span.onoffswitch2-switch
   p.pull-right Delaktighet
    div.onoffswitch3
-    input(type='checkbox', name="delaktighetswitch").onoffswitch3-checkbox#delaktighetswitch 
+    input(type='checkbox', id="delaktighetswitch" ng-model="switches.2" ng-change="switchChange()").onoffswitch3-checkbox
     label(for="delaktighetswitch").onoffswitch3-label
      span.onoffswitch3-inner
      span.onoffswitch3-switch
   p.pull-right Information
    div.onoffswitch4
-    input(type='checkbox', name="informationsswitch").onoffswitch4-checkbox#informationsswitch 
+    input(type='checkbox', id="informationsswitch" ng-model="switches.3" ng-change="switchChange()").onoffswitch4-checkbox
     label(for="informationsswitch").onoffswitch4-label
      span.onoffswitch4-inner
      span.onoffswitch4-switch
   p.pull-right Mat och fritid
    div.onoffswitch5
-    input(type='checkbox', name="matswitch").onoffswitch5-checkbox#matswitch 
+    input(type='checkbox', id="matswitch" ng-model="switches.4" ng-change="switchChange()").onoffswitch5-checkbox 
     label(for="matswitch").onoffswitch5-label
      span.onoffswitch5-inner
      span.onoffswitch5-switch
