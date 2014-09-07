@@ -8,7 +8,7 @@
 
 @basecolor: #F0F0F0;
 
-@sidebarWidth: 250px;
+@sidebarWidth: 300px;
 @sidebarPadding: 10px;
 @sidebarTextColor: #707070;
 @footerHeight: 100px;
@@ -29,6 +29,7 @@ html, body, #wrapper {
   float: left;
   height: 100%;
   padding: 0;
+  z-index: -1;
 }
 
 .sidebar {
@@ -71,4 +72,16 @@ html, body, #wrapper {
 .progress
 {
   width: 50%;
+}
+
+.infobox{
+  position: absolute;
+  left: 50%;
+  background-color: @basecolor;
+  text-align: center;
+  z-index: 100;
+  border: 1px solid #CECECE;
+  padding: 1%;
+  margin: 1%;
+
 }

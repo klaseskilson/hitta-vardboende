@@ -1,5 +1,10 @@
 //- place map stuff here
+
+div.infobox 
+  h4 Just nu visas alla vårdboenden! 
+
 google-map(center="map.center", zoom="map.zoom", options="map.options", control="mapControl", draggable="true")
+
   marker(ng-repeat="house in mapPoints", idKey="house.id", coords="house.coordinates", click="showHouse(house)")
     window(show="house.show", ng-class="{active: caregiverIsSelected(house)}")
       div
@@ -11,6 +16,9 @@ google-map(center="map.center", zoom="map.zoom", options="map.options", control=
         p
           a(href="#", ng-click="selectCaregiver(house.caregiver)") Mer info om {{house.caregiver}}
 
+
 {{ map.zoom }}
 {{ map.center.longitude }}
 {{ map.center.latitude }}
+
+
