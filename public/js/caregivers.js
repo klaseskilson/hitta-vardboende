@@ -18,6 +18,6 @@ var caregivers = [
     name: 'Aleris äldreomsorg'
   },
   {
-    name: 'Berzelii vård och omsorg '
+    name: 'Berzelii'
   }
 ]

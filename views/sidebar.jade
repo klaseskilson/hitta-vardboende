@@ -6,7 +6,7 @@
     i.fa.fa-cog.fa-lg
 
 
-.questions.content
+.questions.content(ng-hide="hasCaregiverSelected()")
 
   h4 Hitta ditt vårdboende!
   p.instructions(ng-hide='hideInstructions()')
@@ -44,7 +44,7 @@
      span.onoffswitch5-inner
      span.onoffswitch5-switch
 
-.result.content
+.result.content(ng-hide="hasCaregiverSelected()")
   h4 Vårdbolag som passar dig
 
   ul.list-unstyled
@@ -54,7 +54,7 @@
 
 .info.content(ng-show="hasCaregiverSelected()")
   i.fa.fa-arrow-left(ng-click="selectCaregiver('')")
-    h4 Linköpings kommun
+    h4 {{selectedCaregiver}}
   p
   p.pull-right Tillgänglighet
     .progress

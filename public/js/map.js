@@ -46,8 +46,7 @@ app.controller('mapsCtrl', function($scope, $http) {
     }
   }
   $scope.selectCaregiver = function(caregiver) {
-    console.log(caregiver);
-    console.log("Hej");
+    $
     $scope.selectedCaregiver = caregiver;
   }
   
