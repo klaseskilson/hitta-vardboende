@@ -22,6 +22,8 @@ app.controller('mapsCtrl', function($scope, $http) {
   };
 
   $scope.caregivers = caregivers;
+  $scope.topics = topics;
+  $scope.activeTopics = [];
 
   $scope.showHouse = function(house) {
     house.show = !house.show || true;
@@ -33,12 +35,7 @@ app.controller('mapsCtrl', function($scope, $http) {
     return false;
   }
   $scope.hasCaregiverSelected = function(){
-    if($scope.selectedCaregiver == '')
-    {
-      return false;
-    }else{
-      return true;
-    }
+    return $scope.selectedCaregiver !== '';
   }
   $scope.caregiverIsSelected = function(house) {
     if($scope.selectedCaregiver && house.caregiver === $scope.selectedCaregiver) {
@@ -46,13 +43,29 @@ app.controller('mapsCtrl', function($scope, $http) {
     }
   }
   $scope.selectCaregiver = function(caregiver) {
-    console.log(caregiver);
-    console.log("Hej");
     $scope.selectedCaregiver = caregiver;
   }
-  
+
+  $scope.calculateScore = function(caregiver) {
+    var sum = 0;
+
+    _($scope.activeTopics).each(function(topic, index) {
+      var theTopic = _.findWhere(topics, {id: topic});
+      var topicIndex = _.indexOf(topics, theTopic);
+      var value = parseFloat(caregiver.answers[topicIndex]);
+      sum += value;
+    });
+
+    return sum;
+  }
+
   $scope.switchChange = function() {
-    console.log($scope.switches);
+    $scope.activeTopics = [];
+    for(var k in $scope.switches) {
+      if($scope.switches[k]) {
+        $scope.activeTopics.push(k);
+      }
+    }
   };
   
   $scope.start = true;
