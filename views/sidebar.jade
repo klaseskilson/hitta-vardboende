@@ -58,11 +58,11 @@
   h4 Vårdbolag rangordnade efter dina val
 
   ul.list-unstyled
-    li(ng-repeat="caregiver in caregivers") 
-      a(ng-click="selectCaregiver(caregiver.name)") {{$index+1}}. {{caregiver.name}}
+    li(ng-repeat="caregiver in caregivers | orderBy:calculateScore:true")
+      a(href ng-click="selectCaregiver(caregiver.name)") {{$index+1}}. {{caregiver.name}}
 
 
-.info.content(ng-show="hasCaregiverSelected()")
+.info.content(ng-show="hasCaregiverSelected()" ng-animate="'fade'")
   i.fa.fa-arrow-left(ng-click="selectCaregiver('')")
     h4 {{selectedCaregiver}}
   p
