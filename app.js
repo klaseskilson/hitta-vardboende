@@ -44,15 +44,6 @@ var passportConf = require('./config/passport');
 
 var app = express();
 
-/**
- * Connect to MongoDB.
- */
-
-mongoose.connect(secrets.db);
-mongoose.connection.on('error', function() {
-  console.error('MongoDB Connection Error. Make sure MongoDB is running.');
-});
-
 var hour = 3600000;
 var day = hour * 24;
 var week = day * 7;
@@ -85,10 +76,6 @@ app.use(session({
   resave: true,
   saveUninitialized: true,
   secret: secrets.sessionSecret,
-  store: new MongoStore({
-    url: secrets.db,
-    auto_reconnect: true
-  })
 }));
 app.use(passport.initialize());
 app.use(passport.session());
