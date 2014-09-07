@@ -8,11 +8,7 @@
 .content(ng-hide="hasCaregiverSelected()")
 
   .questions(ng-hide="hasCaregiverSelected()")
-
-    h4 Hitta rätt vårdbolag!
-    p.instructions(ng-hide='hideInstructions()')
-      i.fa.fa-info-circle
-      | Markera de områden som är viktiga för dig.
+    p Markera de områden som är viktigast för dig.
 
     //- .clearfix(ng-repeat="topic in topics")
     //-   p.pull-right {{topic.name}}
@@ -24,42 +20,61 @@
 
     //- div.clearfix
 
-    p.pull-right Tillgänglighet
-     div.onoffswitch1
-      input(type='checkbox', id="tillganglighetsswitch" ng-model="switches.access" ng-change="switchChange()").onoffswitch1-checkbox
-      label(for="tillganglighetsswitch").onoffswitch1-label
-       span.onoffswitch1-inner
-       span.onoffswitch1-switch
-    p.pull-right Bemötande
-     div.onoffswitch2
-      input(type='checkbox', id="bemotandeswitch" ng-model="switches.treatment" ng-change="switchChange()").onoffswitch2-checkbox
-      label(for="bemotandeswitch").onoffswitch2-label
-       span.onoffswitch2-inner
-       span.onoffswitch2-switch
-    p.pull-right Delaktighet
-     div.onoffswitch3
-      input(type='checkbox', id="delaktighetswitch" ng-model="switches.participation" ng-change="switchChange()").onoffswitch3-checkbox
-      label(for="delaktighetswitch").onoffswitch3-label
-       span.onoffswitch3-inner
-       span.onoffswitch3-switch
-    p.pull-right Information
-     div.onoffswitch4
-      input(type='checkbox', id="informationsswitch" ng-model="switches.information" ng-change="switchChange()").onoffswitch4-checkbox
-      label(for="informationsswitch").onoffswitch4-label
-       span.onoffswitch4-inner
-       span.onoffswitch4-switch
-    p.pull-right Mat och fritid
-     div.onoffswitch5
-      input(type='checkbox', id="matswitch" ng-model="switches.food" ng-change="switchChange()").onoffswitch5-checkbox
-      label(for="matswitch").onoffswitch5-label
-       span.onoffswitch5-inner
-       span.onoffswitch5-switch
+    ul.list-unstyled
+      li.select-topics
+        input(type='checkbox', id="switches-access", ng-model="switches.access", ng-change="switchChange()")
+        label(for="switches-access") Tillgänglighet
+      li.select-topics
+        input(type='checkbox', id="switches-treatment", ng-model="switches.treatment", ng-change="switchChange()")
+        label(for="switches-treatment") Bemötande
+      li.select-topics
+        input(type='checkbox', id="switches-participation", ng-model="switches.participation", ng-change="switchChange()")
+        label(for="switches-participation") Delaktighet
+      li.select-topics
+        input(type='checkbox', id="switches-information", ng-model="switches.information", ng-change="switchChange()")
+        label(for="switches-information") Information
+      li.select-topics
+        input(type='checkbox', id="switches-food", ng-model="switches.food", ng-change="switchChange()")
+        label(for="switches-food") Mat och fritid
+
+    //- p.pull-right Tillgänglighet
+    //-  div.onoffswitch1
+    //-   input(type='checkbox', id="tillganglighetsswitch" ng-model="switches.access" ng-change="switchChange()").onoffswitch1-checkbox
+    //-   label(for="tillganglighetsswitch").onoffswitch1-label
+    //-    span.onoffswitch1-inner
+    //-    span.onoffswitch1-switch
+    //- p.pull-right Bemötande
+    //-  div.onoffswitch2
+    //-   input(type='checkbox', id="bemotandeswitch" ng-model="switches.treatment" ng-change="switchChange()").onoffswitch2-checkbox
+    //-   label(for="bemotandeswitch").onoffswitch2-label
+    //-    span.onoffswitch2-inner
+    //-    span.onoffswitch2-switch
+    //- p.pull-right Delaktighet
+    //-  div.onoffswitch3
+    //-   input(type='checkbox', id="delaktighetswitch" ng-model="switches.participation" ng-change="switchChange()").onoffswitch3-checkbox
+    //-   label(for="delaktighetswitch").onoffswitch3-label
+    //-    span.onoffswitch3-inner
+    //-    span.onoffswitch3-switch
+    //- p.pull-right Information
+    //-  div.onoffswitch4
+    //-   input(type='checkbox', id="informationsswitch" ng-model="switches.information" ng-change="switchChange()").onoffswitch4-checkbox
+    //-   label(for="informationsswitch").onoffswitch4-label
+    //-    span.onoffswitch4-inner
+    //-    span.onoffswitch4-switch
+    //- p.pull-right Mat och fritid
+    //-  div.onoffswitch5
+    //-   input(type='checkbox', id="matswitch" ng-model="switches.food" ng-change="switchChange()").onoffswitch5-checkbox
+    //-   label(for="matswitch").onoffswitch5-label
+    //-    span.onoffswitch5-inner
+    //-    span.onoffswitch5-switch
 
   .result(ng-show="hideInstructions()")
     h4 Vårdbolag rangordnade efter dina val
 
-    ul.list-unstyled
-      li(ng-repeat="caregiver in caregivers | orderBy:calculateScore:true")
+    p Klicka på ett vårbolag för att veta mer.
+
+    ul.list-unstyled.result-list
+      li(ng-repeat="caregiver in caregivers | orderBy:calculateScore:true", class="result-list-{{$index}}")
         a(href="#" ng-click="selectCaregiver(caregiver.name)") {{$index+1}}. {{caregiver.name}}
 
 .info.content(ng-show="hasCaregiverSelected()" ng-animate="'fade'")

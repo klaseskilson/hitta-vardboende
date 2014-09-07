@@ -8,6 +8,33 @@
 @informationcolor: #CEFFA5;
 @matochfritidcolor: #FF6261;
 
+.select-topics label {
+  margin-left: 5px;
+  padding: 1px 5px;
+}
+.select-topics input[type=checkbox]:checked + label {
+  border-radius: 3px;
+}
+
+.select-topics #switches-access:checked + label {
+    background: @tillganglighetcolor;
+    color: #fff;
+}
+.select-topics #switches-treatment:checked + label {
+    background: @bemotandecolor;
+    color: #fff;
+}
+.select-topics #switches-participation:checked + label {
+    background: @delaktighetcolor;
+}
+.select-topics #switches-information:checked + label {
+    background: @informationcolor;
+}
+.select-topics #switches-food:checked + label {
+    background: @matochfritidcolor;
+    color: #fff;
+}
+
 .onoffswitch1 {
     position: relative;
     width: 40px;
