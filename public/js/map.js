@@ -8,6 +8,7 @@ app.controller('mapsCtrl', function($scope, $http) {
   $scope.currentCity = $scope.cities[0];
 
   $scope.selectedCaregiver = '';
+  $scope.selectedCaregiverData = {};
 
   $scope.map = {
     center: $scope.currentCity.location,
@@ -44,6 +45,18 @@ app.controller('mapsCtrl', function($scope, $http) {
   }
   $scope.selectCaregiver = function(caregiver) {
     $scope.selectedCaregiver = caregiver;
+    if (caregiver !== '') {
+      var theCaregiver = _.findWhere($scope.caregivers, {name: caregiver});
+      $scope.selectedCaregiverData.access = theCaregiver.answers[1];
+      $scope.selectedCaregiverData.treatment = theCaregiver.answers[2];
+      $scope.selectedCaregiverData.participation = theCaregiver.answers[3];
+      $scope.selectedCaregiverData.information = theCaregiver.answers[4];
+      $scope.selectedCaregiverData.food = theCaregiver.answers[5];
+
+      console.log($scope.selectedCaregiverData);
+    } else {
+      $scope.selectedCaregiverData = {};
+    }
   }
 
   $scope.calculateScore = function(caregiver) {
@@ -69,12 +82,9 @@ app.controller('mapsCtrl', function($scope, $http) {
   };
 
   $scope.start = true;
- console.log($scope.start);
+
   $scope.startCheck = function(){
     $scope.start = false;
     console.log($scope.start);
   };
-
-
-
 });

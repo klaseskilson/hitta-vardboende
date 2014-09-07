@@ -87,26 +87,26 @@ div(ng-hide="hasCaregiverSelected()")
     | Gå tillbaka
 
   h4 {{selectedCaregiver}}
-  p
+
   p.pull-right Tillgänglighet
     .progress
-      .progress-bar(role='progressbar', id="tillganglighetbar" style='width: {{60}}%')
+      .progress-bar(role='progressbar', id="tillganglighetbar" style='width: {{selectedCaregiverData.access}}%')
 
   p.pull-right Bemötande
     .progress
-      .progress-bar(role='progressbar', id="bemotandebar" style='width: {{60}}%')
+      .progress-bar(role='progressbar', id="bemotandebar" style='width: {{selectedCaregiverData.treatment}}%')
 
   p.pull-right Delaktighet
     .progress
-      .progress-bar(role='progressbar', id="delaktighetbar" style='width:{{20+60}}%')
+      .progress-bar(role='progressbar', id="delaktighetbar" style='width:{{selectedCaregiverData.participation}}%')
 
   p.pull-right Information
     .progress
-      .progress-bar(role='progressbar', id="infomationbar" style='width: {{60}}%')
+      .progress-bar(role='progressbar', id="infomationbar" style='width: {{selectedCaregiverData.information}}%')
 
   p.pull-right Mat och fritid
     .progress
-      .progress-bar(role='progressbar', id="matochfritidbar" style='width: {{60}}%')
+      .progress-bar(role='progressbar', id="matochfritidbar" style='width: {{selectedCaregiverData.food}}%')
 
   p Vårdboladet har 7 boenden, och har för närvarande 46 dagar i väntetid. För mer information, besök bolagets
     a(href='{{google.com}}')  webbplats
