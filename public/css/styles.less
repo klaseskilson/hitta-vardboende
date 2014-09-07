@@ -4,6 +4,7 @@
 @import "bootstrap-custom";
 @import "lib/bootstrap-social";
 @import "buttonstyle";
+@import "barstyle";
 
 @basecolor: #F0F0F0;
 
@@ -41,7 +42,7 @@ html, body, #wrapper {
 
   .sidebarmain{
     height: calc(~"100% -" (@footerHeight)~"");
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   .content {
     padding: @sidebarPadding;
@@ -67,3 +68,7 @@ html, body, #wrapper {
   height: 100%;
 }
 
+.progress
+{
+  width: 50%;
+}
