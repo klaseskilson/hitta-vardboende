@@ -38,7 +38,7 @@ html, body, #wrapper {
   .sidebarmain{
     height: calc(~"100% -" (@footerHeight)~"");
   }
-  div {
+  .content {
     padding: @sidebarPadding;
   }
   .city {
@@ -65,7 +65,7 @@ html, body, #wrapper {
 /*KNAPPSTIL*/
 /*---------*/
 .onoffswitch {
-    position: relative; width: 40px; padding: 0px !important; 
+    position: relative; width: 40px; padding: 0px !important;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
 
@@ -109,7 +109,7 @@ html, body, #wrapper {
     border: 2px solid #999999; border-radius: 0px;
     position: absolute; top: 0; bottom: 0; right: 20px;
     -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
-    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s;
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
@@ -117,5 +117,5 @@ html, body, #wrapper {
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-    right: 0px; 
+    right: 0px;
 }

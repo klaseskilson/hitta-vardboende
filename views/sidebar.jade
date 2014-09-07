@@ -1,5 +1,5 @@
 //- place sidebar stuff here
-div.city
+.city.content
   {{currentCity.name}}
   //- select(ng-model='selectedCity', ng-change='changeCity()', ng-options='city as city.name for city in cities')
   span.pull-right(title='Ändra stad')
@@ -7,7 +7,7 @@ div.city
 
 
 
-.questions
+.questions.content
 
   h4 Hitta ditt vårdboende!
   p.instructions(ng-hide='hideInstructions()')
@@ -16,44 +16,44 @@ div.city
 
   p.pull-right Helhetsområde
    div.onoffswitch
-    input(type='checkbox', name="helhetsswitch").onoffswitch-checkbox#helhetsswitch 
+    input(type='checkbox', name="helhetsswitch").onoffswitch-checkbox#helhetsswitch
     label(for="helhetsswitch").onoffswitch-label
      span.onoffswitch-inner
      span.onoffswitch-switch
   p.pull-right Tillgänglighet
    div.onoffswitch
-    input(type='checkbox', name="tillganglighetsswitch").onoffswitch-checkbox#tillganglighetsswitch 
+    input(type='checkbox', name="tillganglighetsswitch").onoffswitch-checkbox#tillganglighetsswitch
     label(for="tillganglighetsswitch").onoffswitch-label
      span.onoffswitch-inner
      span.onoffswitch-switch
   p.pull-right Bemötande
    div.onoffswitch
-    input(type='checkbox', name="bemotandeswitch").onoffswitch-checkbox#bemotandeswitch 
+    input(type='checkbox', name="bemotandeswitch").onoffswitch-checkbox#bemotandeswitch
     label(for="bemotandeswitch").onoffswitch-label
      span.onoffswitch-inner
      span.onoffswitch-switch
   p.pull-right Delaktighet
    div.onoffswitch
-    input(type='checkbox', name="delaktighetswitch").onoffswitch-checkbox#delaktighetswitch 
+    input(type='checkbox', name="delaktighetswitch").onoffswitch-checkbox#delaktighetswitch
     label(for="delaktighetswitch").onoffswitch-label
      span.onoffswitch-inner
      span.onoffswitch-switch
   p.pull-right Information
    div.onoffswitch
-    input(type='checkbox', name="informationsswitch").onoffswitch-checkbox#informationsswitch 
+    input(type='checkbox', name="informationsswitch").onoffswitch-checkbox#informationsswitch
     label(for="informationsswitch").onoffswitch-label
      span.onoffswitch-inner
      span.onoffswitch-switch
   p.pull-right Mat och fritid
    div.onoffswitch
-    input(type='checkbox', name="matswitch").onoffswitch-checkbox#matswitch 
+    input(type='checkbox', name="matswitch").onoffswitch-checkbox#matswitch
     label(for="matswitch").onoffswitch-label
      span.onoffswitch-inner
      span.onoffswitch-switch
 
 
 
-.result
+.result.content
   h4 Vårdbolag som passar dig
 
   p 1. Linköpings kommun
