@@ -2,6 +2,7 @@ app.controller('mapsCtrl', function($scope, $http, SharedData) {
   $scope.mapControl = {};
   $scope.cities = SharedData.cities;
   $scope.currentCity = SharedData.currentCity;
+  $scope.mapPoints = houses;
 
   $scope.map = {
     center: $scope.currentCity.location,
@@ -19,4 +20,9 @@ app.controller('mapsCtrl', function($scope, $http, SharedData) {
     $scope.currentCity = SharedData.currentCity;
     $scope.mapControl.refresh($scope.currentCity.location);
   });
+
+  $scope.showHouse = function(house) {
+    house.show = !house.show || true;
+    console.log(house);
+  }
 });

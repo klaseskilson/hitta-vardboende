@@ -15,6 +15,7 @@
 
 //= require main
 //= require wookieapp
+//= require houses
 //= require mapStyle
 //= require map
 //= require sidebar

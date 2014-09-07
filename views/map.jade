@@ -1,5 +1,9 @@
 //- place map stuff here
 google-map(center="map.center", zoom="map.zoom", options="map.options", control="mapControl", draggable="true")
+  marker(ng-repeat="house in mapPoints", idKey="house.id", coords="house.coordinates", click="showHouse(house)")
+    window(show="house.show")
+      div
+        | {{house.name}}, {{house.address}}
 
 {{ map.zoom }}
 {{ map.center.longitude }}
