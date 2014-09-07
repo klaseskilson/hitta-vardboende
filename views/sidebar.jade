@@ -5,61 +5,62 @@
   span.pull-right(title='Ändra stad')
     i.fa.fa-cog.fa-lg
 
+.content(ng-hide="hasCaregiverSelected()")
 
-.questions.content(ng-hide="hasCaregiverSelected()")
+  .questions(ng-hide="hasCaregiverSelected()")
 
-  h4 Hitta rätt vårdbolag!
-  p.instructions(ng-hide='hideInstructions()')
-    i.fa.fa-info-circle
-    | Markera de områden som är viktiga för dig.
+    h4 Hitta rätt vårdbolag!
+    p.instructions(ng-hide='hideInstructions()')
+      i.fa.fa-info-circle
+      | Markera de områden som är viktiga för dig.
 
-  //- .clearfix(ng-repeat="topic in topics")
-  //-   p.pull-right {{topic.name}}
-  //-   div.onoffswitch(id="{{topic.id}}")
-  //-     input(type='checkbox', id="input-{{topic.id}}" ng-model="switches.wat" ng-change="switchChange()").onoffswitch-checkbox
-  //-     label(for="input-{{topic.id}}").onoffswitch-label
-  //-       span.onoffswitch-inner
-  //-       span.onoffswitch-switch
+    //- .clearfix(ng-repeat="topic in topics")
+    //-   p.pull-right {{topic.name}}
+    //-   div.onoffswitch(id="{{topic.id}}")
+    //-     input(type='checkbox', id="input-{{topic.id}}" ng-model="switches.wat" ng-change="switchChange()").onoffswitch-checkbox
+    //-     label(for="input-{{topic.id}}").onoffswitch-label
+    //-       span.onoffswitch-inner
+    //-       span.onoffswitch-switch
 
-  //- div.clearfix
+    //- div.clearfix
 
-  p.pull-right Tillgänglighet
-   div.onoffswitch1
-    input(type='checkbox', id="tillganglighetsswitch" ng-model="switches.access" ng-change="switchChange()").onoffswitch1-checkbox
-    label(for="tillganglighetsswitch").onoffswitch1-label
-     span.onoffswitch1-inner
-     span.onoffswitch1-switch
-  p.pull-right Bemötande
-   div.onoffswitch2
-    input(type='checkbox', id="bemotandeswitch" ng-model="switches.treatment" ng-change="switchChange()").onoffswitch2-checkbox
-    label(for="bemotandeswitch").onoffswitch2-label
-     span.onoffswitch2-inner
-     span.onoffswitch2-switch
-  p.pull-right Delaktighet
-   div.onoffswitch3
-    input(type='checkbox', id="delaktighetswitch" ng-model="switches.participation" ng-change="switchChange()").onoffswitch3-checkbox
-    label(for="delaktighetswitch").onoffswitch3-label
-     span.onoffswitch3-inner
-     span.onoffswitch3-switch
-  p.pull-right Information
-   div.onoffswitch4
-    input(type='checkbox', id="informationsswitch" ng-model="switches.information" ng-change="switchChange()").onoffswitch4-checkbox
-    label(for="informationsswitch").onoffswitch4-label
-     span.onoffswitch4-inner
-     span.onoffswitch4-switch
-  p.pull-right Mat och fritid
-   div.onoffswitch5
-    input(type='checkbox', id="matswitch" ng-model="switches.food" ng-change="switchChange()").onoffswitch5-checkbox
-    label(for="matswitch").onoffswitch5-label
-     span.onoffswitch5-inner
-     span.onoffswitch5-switch
+    p.pull-right Tillgänglighet
+     div.onoffswitch1
+      input(type='checkbox', id="tillganglighetsswitch" ng-model="switches.access" ng-change="switchChange()").onoffswitch1-checkbox
+      label(for="tillganglighetsswitch").onoffswitch1-label
+       span.onoffswitch1-inner
+       span.onoffswitch1-switch
+    p.pull-right Bemötande
+     div.onoffswitch2
+      input(type='checkbox', id="bemotandeswitch" ng-model="switches.treatment" ng-change="switchChange()").onoffswitch2-checkbox
+      label(for="bemotandeswitch").onoffswitch2-label
+       span.onoffswitch2-inner
+       span.onoffswitch2-switch
+    p.pull-right Delaktighet
+     div.onoffswitch3
+      input(type='checkbox', id="delaktighetswitch" ng-model="switches.participation" ng-change="switchChange()").onoffswitch3-checkbox
+      label(for="delaktighetswitch").onoffswitch3-label
+       span.onoffswitch3-inner
+       span.onoffswitch3-switch
+    p.pull-right Information
+     div.onoffswitch4
+      input(type='checkbox', id="informationsswitch" ng-model="switches.information" ng-change="switchChange()").onoffswitch4-checkbox
+      label(for="informationsswitch").onoffswitch4-label
+       span.onoffswitch4-inner
+       span.onoffswitch4-switch
+    p.pull-right Mat och fritid
+     div.onoffswitch5
+      input(type='checkbox', id="matswitch" ng-model="switches.food" ng-change="switchChange()").onoffswitch5-checkbox
+      label(for="matswitch").onoffswitch5-label
+       span.onoffswitch5-inner
+       span.onoffswitch5-switch
 
-.result.content(ng-hide="hasCaregiverSelected()")
-  h4 Vårdbolag rangordnade efter dina val
+  .result(ng-show="hideInstructions()")
+    h4 Vårdbolag rangordnade efter dina val
 
-  ul.list-unstyled
-    li(ng-repeat="caregiver in caregivers | orderBy:calculateScore:true")
-      a(href="#" ng-click="selectCaregiver(caregiver.name)") {{$index+1}}. {{caregiver.name}}
+    ul.list-unstyled
+      li(ng-repeat="caregiver in caregivers | orderBy:calculateScore:true")
+        a(href="#" ng-click="selectCaregiver(caregiver.name)") {{$index+1}}. {{caregiver.name}}
 
 .info.content(ng-show="hasCaregiverSelected()" ng-animate="'fade'")
   i.fa.fa-arrow-left(ng-click="selectCaregiver('')")
@@ -69,7 +70,7 @@
     .progress
       .progress-bar(role='progressbar', id="tillganglighetbar" style='width: {{60}}%')
 
-  p.pull-right  Bemötande
+  p.pull-right Bemötande
     .progress
       .progress-bar(role='progressbar', id="bemotandebar" style='width: {{60}}%')
 
@@ -77,7 +78,7 @@
     .progress
       .progress-bar(role='progressbar', id="delaktighetbar" style='width:{{20+60}}%')
 
-  p.pull-right  Information
+  p.pull-right Information
     .progress
       .progress-bar(role='progressbar', id="infomationbar" style='width: {{60}}%')
 
