@@ -1,0 +1,65 @@
+.modal.fade(id="aboutModal", tabindex="-1", role="dialog", aria-labelledby="aboutModalLabel", aria-hidden="true")
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button(type="button", class="close", data-dismiss="modal")
+          span(aria-hidden="true") &times;
+          span(class="sr-only") Close
+        h4.modal-title(id="aboutModalLabel") Om tjänsten
+      .modal-body
+        p HEJ! Vad kul att du hittat hit.
+        p Hitta vårdboende! gjordes under några få, hektiska timmar på Hackathonet&nbsp;
+          a(href="http://eastswedenhack.se", target="_blank") East Sweden Hack 2014
+          |  i Linköping. Bakom kulisserna puttrar Node.js, och tjänsten är baserad på&nbsp;
+          a(href="https://github.com/sahat/hackathon-starter") Sahat Yalkabovs "Hackathon Starter"
+          | . Förutom Node.js använder vi lite härligheter i form av AngularJS, Jade, Less och en massa gosigheter.
+        p Vi som gjort Hitta vårdboende! är fyra glada&nbsp;
+          a(href="http://medieteknik.nu", target="_blank") medieteknikstudenter
+          | som pluggar i Norrköping på LiU. Vi heter&nbsp;
+          a(href="http://petraohlin.se", target="_blank") Petra Öhlin
+          | ,&nbsp;
+          a(href="http://pontusorraryd.se/", target="_blank") Pontus Orraryd
+          | ,&nbsp;
+          a(href="http://klaseskilson.se", target="_blank") Klas Eskilson
+          |  och&nbsp;
+          a(href="http://carlenglund.se", target="_blank") Carl Englund
+          | .
+        p Allt du ser framför dig, förutom datan som kommer från&nbsp;
+          a(href="http://www.linkoping.se/open/") Linköpings kommun
+          |  är licensierat enligt&nbsp;
+          a(href="http://www.wtfpl.net/") Do What the Fuck You Want to Public License
+          | . Du får alltså göra vad du vill med det du ser. Kopiera, härja, vad som helst.
+        p
+          strong Koden
+          |  som gör allt detta finns på&nbsp;
+          a(href="https://github.com/klaseskilson/hitta-vardboende", target="_blank") GitHub
+          | . Kika gärna där om du tycker sånt är kul!
+
+
+
+.modal.fade(id="termsModal", tabindex="-1", role="dialog", aria-labelledby="termsModalLabel", aria-hidden="true")
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button(type="button", class="close", data-dismiss="modal")
+          span(aria-hidden="true") &times;
+          span(class="sr-only") Close
+        h4.modal-title(id="termsModalLabel") Villkor för användning av Hitta vårdboende!
+      .modal-body
+        p Först och främst, vad skoj att du hittat hit! Det gör oss superglada att du vill kika på vad vi gjort.
+        p Med det avklarat måste vi vara lite mer seriösa. Hitta vårdboende gjordes under några hektiska timmar på&nbsp;
+          a(href="http://eastswedenhack.se", target="_blank") East Sweden Hack 2014
+          |. Medan datan som används och visas i många fall är sann, kan vi inte garantera att den stämmer till 100%.
+        p Med det i åtanke måste vi be dig att inte använda Hitta vårdboende! för att avgöra vilket vårboende du ska välja.
+        p När du använder tjänsten accepterar du dessa villkor:
+        ul
+          li
+            strong Definitioner:
+            |  Med tjänsten menas nedan "Hitta vårdboende!", sidan du är inne och besöker just nu. Med skaparna menas Carl Englund, Klas Eskilson, Pontus Orraryd och Petra Öhlin som under ESH14 gjorde Hitta vårdboende.
+          li Skaparna tar inget ansvar för de handlingar du utför basserat på informationen du får via tjänsten.
+          li Tjänsten är inte relaterad till Linköpings kommun på något sätt annat än att viss data hämtas där ifrån. Linköpings kommun kan inte heller hållas skyldiga för de handlingar du utför basserat på informationen du får via tjänsten.
+          li Tjänsten kan, när som helst och utan förvarning, tas ned och göras otillgänglig. Skaparna kan inte garantera att den fungerar väl, eller att den finns tillänglig framöver.
+          li Skaparna licensierar härmed tjänsten, och all tillgänglig kod under&nbsp;
+            a(href="http://www.wtfpl.net/") Do What the Fuck You Want to Public License
+            | .
+

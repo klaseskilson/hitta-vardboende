@@ -10,6 +10,7 @@ html
     title Hitta vårdboende!
     != css('styles')
   body(ng-app='wookieApp', ng-controller='mapsCtrl')
+    include partials/about
     .container-fluid(id='wrapper')
       include partials/flash
       block content

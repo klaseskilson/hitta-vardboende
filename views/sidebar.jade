@@ -72,9 +72,9 @@
 div(ng-hide="hasCaregiverSelected()")
   .result.content(ng-show="hideInstructions()")
       h4 Vårdbolag
-      p Nedan rangordnas vårbolag efter det du tycker är viktigt.
+      p Nedan rangordnas vårdbolag efter det du tycker är viktigt.
 
-      p Klicka på ett vårbolag för att veta mer.
+      p Klicka på ett vårdbolag för att veta mer.
 
       ul.list-unstyled.result-list
         li(ng-repeat="caregiver in caregivers | orderBy:calculateScore:true", class="result-list-{{$index}}")
